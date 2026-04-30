@@ -1,0 +1,536 @@
+
+*** Running vivado
+    with args -log neuron.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source neuron.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source neuron.tcl -notrace
+Command: synth_design -top neuron -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 20920 
+WARNING: [Synth 8-2507] parameter declaration becomes local in neuron with formal parameter declaration list [D:/Verilog Projects/Neural_Networks/neuron.v:34]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 357.809 ; gain = 112.594
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'neuron' [D:/Verilog Projects/Neural_Networks/neuron.v:12]
+	Parameter layerNo bound to: 0 - type: integer 
+	Parameter neuronNo bound to: 0 - type: integer 
+	Parameter numWeight bound to: 784 - type: integer 
+	Parameter dataWidth bound to: 16 - type: integer 
+	Parameter sigmoidSize bound to: 10 - type: integer 
+	Parameter weightIntWidth bound to: 4 - type: integer 
+	Parameter actType bound to: sigmoid - type: string 
+	Parameter biasFile bound to: b_1_0.mif - type: string 
+	Parameter weightFile bound to: w_1_0.mif - type: string 
+	Parameter addressWidth bound to: 10 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'b_1_0.mif' is read successfully [D:/Verilog Projects/Neural_Networks/neuron.v:95]
+INFO: [Synth 8-638] synthesizing module 'Sig_ROM' [D:/Verilog Projects/Neural_Networks/Sig_ROM.v:2]
+	Parameter inWidth bound to: 10 - type: integer 
+	Parameter dataWidth bound to: 16 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'sigContent.mif' is read successfully [D:/Verilog Projects/Neural_Networks/Sig_ROM.v:14]
+INFO: [Synth 8-256] done synthesizing module 'Sig_ROM' (1#1) [D:/Verilog Projects/Neural_Networks/Sig_ROM.v:2]
+INFO: [Synth 8-638] synthesizing module 'Weight_Memory' [D:/Verilog Projects/Neural_Networks/Weight_Memory.v:5]
+	Parameter numWeight bound to: 784 - type: integer 
+	Parameter neuronNo bound to: 0 - type: integer 
+	Parameter layerNo bound to: 0 - type: integer 
+	Parameter addressWidth bound to: 10 - type: integer 
+	Parameter dataWidth bound to: 16 - type: integer 
+	Parameter weightFile bound to: w_1_0.mif - type: string 
+INFO: [Synth 8-3876] $readmem data file 'w_1_0.mif' is read successfully [D:/Verilog Projects/Neural_Networks/Weight_Memory.v:22]
+INFO: [Synth 8-256] done synthesizing module 'Weight_Memory' (2#1) [D:/Verilog Projects/Neural_Networks/Weight_Memory.v:5]
+WARNING: [Synth 8-689] width (11) of port connection 'radd' does not match port width (10) of module 'Weight_Memory' [D:/Verilog Projects/Neural_Networks/neuron.v:194]
+
+Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
+	1: RAM's read address port stuck at constant. 
+	2: Unable to determine number of words or word size in RAM. 
+	3: No valid read/write found for RAM. 
+RAM dissolved into registers
+INFO: [Synth 8-256] done synthesizing module 'neuron' (3#1) [D:/Verilog Projects/Neural_Networks/neuron.v:12]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port wen
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port wadd[9]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port wadd[8]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port wadd[7]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port wadd[6]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port wadd[5]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port wadd[4]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port wadd[3]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port wadd[2]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port wadd[1]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port wadd[0]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[15]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[14]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[13]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[12]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[11]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[10]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[9]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[8]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[7]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[6]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[5]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[4]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[3]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[2]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[1]
+WARNING: [Synth 8-3331] design Weight_Memory has unconnected port win[0]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValid
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[31]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[30]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[29]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[28]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[27]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[26]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[25]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[24]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[23]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[22]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[21]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[20]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[19]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[18]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[17]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[16]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[31]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[30]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[29]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[28]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[27]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[26]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[25]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[24]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[23]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[22]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[21]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[20]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[19]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[18]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[17]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[16]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[15]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[14]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[13]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[12]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[11]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[10]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[9]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[8]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[7]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[6]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[5]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[4]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[3]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[2]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[1]
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValue[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 390.500 ; gain = 145.285
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 390.500 ; gain = 145.285
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Verilog Projects/Neural_Networks/neuron/neuron.srcs/constrs_1/new/constraints.xdc]
+WARNING: [Vivado 12-663] port, pin or net 'get_ports' not found. [D:/Verilog Projects/Neural_Networks/neuron/neuron.srcs/constrs_1/new/constraints.xdc:1]
+INFO: [Vivado 12-2286] Implicit search of objects for pattern 'clk' matched to 'port' objects. [D:/Verilog Projects/Neural_Networks/neuron/neuron.srcs/constrs_1/new/constraints.xdc:1]
+Resolution: To avoid ambiguous patterns, provide proper objects using get commands e.g. [get_nets xyz].
+Finished Parsing XDC File [D:/Verilog Projects/Neural_Networks/neuron/neuron.srcs/constrs_1/new/constraints.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 764.648 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:55 ; elapsed = 00:01:02 . Memory (MB): peak = 764.648 ; gain = 519.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:55 ; elapsed = 00:01:02 . Memory (MB): peak = 764.648 ; gain = 519.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:01:02 . Memory (MB): peak = 764.648 ; gain = 519.434
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element y_reg was removed.  [D:/Verilog Projects/Neural_Networks/Sig_ROM.v:22]
+WARNING: [Synth 8-6014] Unused sequential element wout_reg was removed.  [D:/Verilog Projects/Neural_Networks/Weight_Memory.v:40]
+WARNING: [Synth 8-6014] Unused sequential element myinputd_reg was removed.  [D:/Verilog Projects/Neural_Networks/neuron.v:178]
+WARNING: [Synth 8-6014] Unused sequential element w_addr_reg was removed.  [D:/Verilog Projects/Neural_Networks/neuron.v:72]
+WARNING: [Synth 8-6014] Unused sequential element r_addr_reg was removed.  [D:/Verilog Projects/Neural_Networks/neuron.v:115]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:56 ; elapsed = 00:01:03 . Memory (MB): peak = 764.648 ; gain = 519.434
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               16 Bit    Registers := 4     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
++---ROMs : 
+	                              ROMs := 2     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module neuron 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               16 Bit    Registers := 3     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 1     
+Module Sig_ROM 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+Module Weight_Memory 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'myinputd_reg[15:0]' into 'myinputd_reg[15:0]' [D:/Verilog Projects/Neural_Networks/neuron.v:178]
+INFO: [Synth 8-4471] merging register 'mul_reg[31:0]' into 'mul_reg[31:0]' [D:/Verilog Projects/Neural_Networks/neuron.v:88]
+WARNING: [Synth 8-6014] Unused sequential element myinputd_reg was removed.  [D:/Verilog Projects/Neural_Networks/neuron.v:178]
+WARNING: [Synth 8-6014] Unused sequential element wen_reg was removed.  [D:/Verilog Projects/Neural_Networks/neuron.v:73]
+WARNING: [Synth 8-6014] Unused sequential element w_in_reg was removed.  [D:/Verilog Projects/Neural_Networks/neuron.v:77]
+WARNING: [Synth 8-6014] Unused sequential element w_addr_reg was removed.  [D:/Verilog Projects/Neural_Networks/neuron.v:72]
+WARNING: [Synth 8-6014] Unused sequential element mul_reg was removed.  [D:/Verilog Projects/Neural_Networks/neuron.v:88]
+WARNING: [Synth 8-6014] Unused sequential element siginst.s1/y_reg was removed.  [D:/Verilog Projects/Neural_Networks/Sig_ROM.v:22]
+WARNING: [Synth 8-6014] Unused sequential element r_addr_reg_rep was removed.  [D:/Verilog Projects/Neural_Networks/neuron.v:115]
+WARNING: [Synth 8-6014] Unused sequential element WM/wout_reg was removed.  [D:/Verilog Projects/Neural_Networks/Weight_Memory.v:40]
+WARNING: [Synth 8-6014] Unused sequential element myinputd_reg was removed.  [D:/Verilog Projects/Neural_Networks/neuron.v:178]
+WARNING: [Synth 8-6014] Unused sequential element r_addr_reg was removed.  [D:/Verilog Projects/Neural_Networks/neuron.v:115]
+DSP Report: Generating DSP comboAdd, operation Mode is: C+(A2*B2)'.
+DSP Report: register WM/wout_reg is absorbed into DSP comboAdd.
+DSP Report: register myinputd_reg is absorbed into DSP comboAdd.
+DSP Report: register mul_reg is absorbed into DSP comboAdd.
+DSP Report: operator comboAdd is absorbed into DSP comboAdd.
+DSP Report: operator mul0 is absorbed into DSP comboAdd.
+DSP Report: Generating DSP mul_reg, operation Mode is: (A2*B2)'.
+DSP Report: register WM/wout_reg is absorbed into DSP mul_reg.
+DSP Report: register myinputd_reg is absorbed into DSP mul_reg.
+DSP Report: register mul_reg is absorbed into DSP mul_reg.
+DSP Report: operator mul0 is absorbed into DSP mul_reg.
+WARNING: [Synth 8-3331] design neuron has unconnected port biasValid
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[31]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[30]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[29]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[28]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[27]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[26]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[25]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[24]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[23]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[22]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[21]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[20]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[19]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[18]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[17]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[16]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[15]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[14]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[13]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[12]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[11]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[10]
+WARNING: [Synth 8-3331] design neuron has unconnected port weightValue[9]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'bias_reg[0]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[1]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[2]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[3]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[4]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[5]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[6]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[7]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[8]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[9]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[10]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[11]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[12]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[13]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[14]' (FDR) to 'bias_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\bias_reg[15] )
+INFO: [Synth 8-3886] merging instance 'bias_reg[16]' (FD) to 'bias_reg[25]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[17]' (FD) to 'bias_reg[31]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[18]' (FD) to 'bias_reg[25]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[19]' (FD) to 'bias_reg[25]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[20]' (FD) to 'bias_reg[31]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[21]' (FD) to 'bias_reg[31]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[22]' (FD) to 'bias_reg[31]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[23]' (FD) to 'bias_reg[25]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[24]' (FD) to 'bias_reg[25]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\bias_reg[25] )
+INFO: [Synth 8-3886] merging instance 'bias_reg[26]' (FD) to 'bias_reg[31]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[27]' (FD) to 'bias_reg[31]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[28]' (FD) to 'bias_reg[31]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[29]' (FD) to 'bias_reg[31]'
+INFO: [Synth 8-3886] merging instance 'bias_reg[30]' (FD) to 'bias_reg[31]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\bias_reg[31] )
+WARNING: [Synth 8-3332] Sequential element (bias_reg[31]) is unused and will be removed from module neuron.
+WARNING: [Synth 8-3332] Sequential element (bias_reg[25]) is unused and will be removed from module neuron.
+WARNING: [Synth 8-3332] Sequential element (bias_reg[15]) is unused and will be removed from module neuron.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:00 ; elapsed = 00:01:08 . Memory (MB): peak = 764.648 ; gain = 519.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++--------------+------------------+---------------+----------------+
+|Module Name   | RTL Object       | Depth x Width | Implemented As | 
++--------------+------------------+---------------+----------------+
+|Sig_ROM       | y_reg            | 1024x16       | Block RAM      | 
+|Weight_Memory | wout_reg         | 1024x16       | Block RAM      | 
+|neuron        | r_addr_reg_rep   | 1024x16       | Block RAM      | 
+|neuron        | siginst.s1/y_reg | 1024x16       | Block RAM      | 
++--------------+------------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|neuron      | C+(A2*B2)'  | 16     | 16     | 32     | -      | 32     | 1    | 1    | 0    | -    | -     | 1    | 0    | 
+|neuron      | (A2*B2)'    | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 1    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:33 ; elapsed = 00:01:45 . Memory (MB): peak = 806.828 ; gain = 561.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:34 ; elapsed = 00:01:47 . Memory (MB): peak = 831.996 ; gain = 586.781
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance r_addr_reg_rep (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance siginst.s1/y_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:34 ; elapsed = 00:01:47 . Memory (MB): peak = 834.676 ; gain = 589.461
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:36 ; elapsed = 00:01:49 . Memory (MB): peak = 834.676 ; gain = 589.461
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:36 ; elapsed = 00:01:49 . Memory (MB): peak = 834.676 ; gain = 589.461
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:36 ; elapsed = 00:01:49 . Memory (MB): peak = 834.676 ; gain = 589.461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:36 ; elapsed = 00:01:49 . Memory (MB): peak = 834.676 ; gain = 589.461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:36 ; elapsed = 00:01:49 . Memory (MB): peak = 834.676 ; gain = 589.461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:36 ; elapsed = 00:01:49 . Memory (MB): peak = 834.676 ; gain = 589.461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     1|
+|2     |CARRY4     |     4|
+|3     |DSP48E1_1  |     2|
+|4     |LUT1       |    11|
+|5     |LUT2       |     5|
+|6     |LUT3       |     6|
+|7     |LUT4       |     8|
+|8     |LUT5       |    36|
+|9     |LUT6       |     8|
+|10    |RAMB18E1   |     1|
+|11    |RAMB18E1_1 |     1|
+|12    |FDRE       |    49|
+|13    |IBUF       |    19|
+|14    |OBUF       |    17|
++------+-----------+------+
+
+Report Instance Areas: 
++------+---------------+--------+------+
+|      |Instance       |Module  |Cells |
++------+---------------+--------+------+
+|1     |top            |        |   168|
+|2     |  \siginst.s1  |Sig_ROM |     2|
++------+---------------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:36 ; elapsed = 00:01:49 . Memory (MB): peak = 834.676 ; gain = 589.461
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 83 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:58 ; elapsed = 00:01:27 . Memory (MB): peak = 834.676 ; gain = 215.312
+Synthesis Optimization Complete : Time (s): cpu = 00:01:36 ; elapsed = 00:01:50 . Memory (MB): peak = 834.676 ; gain = 589.461
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 27 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+58 Infos, 121 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:39 ; elapsed = 00:01:56 . Memory (MB): peak = 834.676 ; gain = 602.434
+INFO: [Common 17-1381] The checkpoint 'D:/Verilog Projects/Neural_Networks/neuron/neuron.runs/synth_1/neuron.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file neuron_utilization_synth.rpt -pb neuron_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.125 . Memory (MB): peak = 834.676 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 15 16:57:01 2026...

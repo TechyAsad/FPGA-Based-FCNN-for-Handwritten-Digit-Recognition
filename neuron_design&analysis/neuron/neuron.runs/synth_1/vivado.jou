@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Apr 15 16:54:55 2026
+# Process ID: 18296
+# Current directory: D:/Verilog Projects/Neural_Networks/neuron/neuron.runs/synth_1
+# Command line: vivado.exe -log neuron.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source neuron.tcl
+# Log file: D:/Verilog Projects/Neural_Networks/neuron/neuron.runs/synth_1/neuron.vds
+# Journal file: D:/Verilog Projects/Neural_Networks/neuron/neuron.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source neuron.tcl -notrace
